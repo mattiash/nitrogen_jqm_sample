@@ -12,8 +12,7 @@ layout() ->
      #h1 { text="My Simple Application" },
      #panel { data_role="fieldcontain", body=[
        #label { for="f1", text="Text input:" },
-       #literal { text="<input type='text' id='f1' value='' />",
-		  html_encode=false }
+       #textbox { id='f1', html_id="f1", text='', postback={set, f1} }
        ] },
 
      #panel { data_role="fieldcontain", body=[
@@ -22,8 +21,8 @@ layout() ->
 		   options= [
                      #option { text="Off", value='off' },
                      #option { text="On", value='on', selected=true }
-                   ], postback={set, "f2"} },
- 
+                   ], postback={set, f2} },
+
      #panel { data_role="fieldcontain", body=[
        #label { for="f3", text="Slider:" },
        #literal { text="<input type='range' id='f3' value='0' min='0' max='100'/>", html_encode=false }
@@ -32,6 +31,9 @@ layout() ->
      #button { text="Submit", postback=submit }
     ] 
   }].
+
+event( { set, Field } ) ->
+    io:format( "~p ~p~n", [ Field, wf:q(Field) ] );
 
 event(_Arg) ->
     io:format( "event( ~p )~n", [_Arg] ).
