@@ -25,7 +25,8 @@ layout() ->
 
      #panel { data_role="fieldcontain", body=[
        #label { for="f3", text="Slider:" },
-       #literal { text="<input type='range' id='f3' value='0' min='0' max='100'/>", html_encode=false }
+       #range { id=f3, min=0, max=100, value=50, html_id="f3",
+		postback={ set, f3} }
      ] },
 
      #button { text="Submit", postback=submit }

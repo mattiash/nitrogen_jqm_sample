@@ -5,8 +5,8 @@
     <meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" /> 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script>
       $(document).bind("mobileinit", function(){
         $.extend(  $.mobile , {
@@ -17,12 +17,12 @@
         });
       });
     </script>
-    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
     <script src='/nitrogen/livevalidation.js' type='text/javascript' charset='utf-8'></script>
     <script src='/nitrogen/nitrogen.js' type='text/javascript' charset='utf-8'></script>
   </head>
   <body>
-    <div data-role="page"> 
+    <div data-role="page" id="pagediv">
       <div data-role="header"> 
 	<h1>[[[page:title()]]]</h1> 
       </div> 
@@ -37,7 +37,9 @@
     </div>
 
     <script>
+    $( '#pagediv' ).live( 'pageinit', function(event){
       [[[script]]]
+    });
     </script>
   </body>
 </html>
