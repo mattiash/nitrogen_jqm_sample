@@ -3,17 +3,17 @@
 -compile(export_all).
             
 main() ->
-       web_common:assert_path( "grid.html" ).
+       web_common:assert_path( "jqm.html" ).
 
 title() -> "Nitrogen Web Framework for Erlang".
 
 layout() ->
-    #container_12 { body=[
-        #grid_12 { class=header, body=web_common:header(page1) },
-        #grid_clear {},
+    [
+     #h1 { text="My Simple Application" },
+     #label { text="What is your name?" },
+     #textbox { },
+     #button { text="Submit", postback=submit }
+    ].
 
-        #grid_12 { body="Page 1" },
-        #grid_clear {},
-
-        #grid_12 { body=web_common:footer() }
-    ]}.
+event(submit) ->
+    io:format( "Hello~n" ).

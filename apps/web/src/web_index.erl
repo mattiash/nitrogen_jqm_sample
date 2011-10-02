@@ -3,17 +3,11 @@
 -compile(export_all).
             
 main() ->
-       web_common:assert_path( "grid.html" ).
+       web_common:assert_path( "jqm.html" ).
 
 title() -> "Nitrogen Web Framework for Erlang".
 
 layout() ->
-    #container_12 { body=[
-        #grid_12 { class=header, body=web_common:header(index) },
-        #grid_clear {},
-
-        #grid_12 { body="Welcome to Nitrogen" },
-        #grid_clear {},
-
-        #grid_12 { body=web_common:footer() }
-    ] }.
+    [
+     #link { id=page1, url='/page1', text="PAGE 1" }
+    ].
