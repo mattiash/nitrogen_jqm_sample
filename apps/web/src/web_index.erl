@@ -9,13 +9,12 @@ title() -> "Nitrogen Web Framework for Erlang".
 
 layout() ->
     [
-     #literal { text="<ul data-role='listview' data-inset='true'>",
-                html_encode=false},
-     #literal { 
-       text="<li data-role='list-divider' role='heading'>List divider</li>",
-       html_encode=false },
-     #literal { text="<li data-theme='c'>", html_encode=false },
-     #link { id=page1, url='/page1', text="Page 1" },
-     #literal { text="</li>", html_encode=false },
-     #literal { text="</ul>", html_encode=false }
+     #list { numbered=false, data_role="listview", data_inset="true",
+       body=[
+	 #listitem { data_role="list-divider",
+		     role="heading", text="List divider" },
+	 #listitem { data_theme="c", body= [
+	   #link { id=page1, url='/page1', text="Page 1" }
+	 ] }
+     ] }
     ].
