@@ -21,7 +21,8 @@ layout() ->
 		   options= [
                      #option { text="Off", value='off' },
                      #option { text="On", value='on', selected=true }
-                   ], postback={set, f2} },
+                   ], postback={set, f2} }
+					     ] },
 
      #panel { data_role="fieldcontain", body=[
        #label { for="f3", text="Slider:" },
@@ -30,8 +31,7 @@ layout() ->
      ] },
 
      #button { text="Submit", postback=submit }
-    ] 
-  }].
+    ].
 
 event( { set, Field } ) ->
     io:format( "~p ~p~n", [ Field, wf:q(Field) ] );
