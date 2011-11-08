@@ -14,7 +14,10 @@ layout() ->
 	 #listitem { data_role="list-divider",
 		     role="heading", text="List divider" },
 	 #listitem { data_theme="c", body= [
-	   #link { id=page1, url='/page1', text="Page 1" }
-	 ] }
+	   #link { id=page1, url='/page1', text="Form test" }
+					   ] },
+	 #listitem { data_theme="c", body= [
+	   #link { id=page1, url='/comet1', text="Comet 1" }
+					   ] }
      ] }
     ].
